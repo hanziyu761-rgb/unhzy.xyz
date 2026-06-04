@@ -339,7 +339,7 @@ footer p{font-size:13px;color:rgba(255,255,255,0.3)}
         </div>
         <div style="text-align:center;padding-top:16px;border-top:1px solid var(--border)">
           <p style="font-size:13px;color:var(--ink-muted);margin-bottom:16px">以上为效果演示，点击下方按钮立即与真实助手对话</p>
-          <a href="https://www.coze.cn/store/agent/7647058497461010482" target="_blank" class="btn-primary" style="display:inline-flex;text-decoration:none">立即免费体验 →</a>
+          <button class="btn-primary" style="display:inline-flex;text-decoration:none;border:none;cursor:pointer" onclick="document.getElementById('wechatModal').style.display='flex'">加微信免费体验 →</button>
         </div>
       </div>
     </div>
@@ -443,4 +443,16 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
-</html>
+<div id="wechatModal" onclick="this.style.display='none'" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(26,26,24,0.75);align-items:center;justify-content:center;backdrop-filter:blur(6px)">
+  <div onclick="event.stopPropagation()" style="background:var(--white);border-radius:20px;padding:48px 40px;max-width:420px;width:88%;text-align:center;box-shadow:0 20px 80px rgba(0,0,0,0.3);position:relative">
+    <div onclick="document.getElementById('wechatModal').style.display='none'" style="position:absolute;top:16px;right:20px;font-size:24px;color:var(--ink-muted);cursor:pointer;line-height:1">×</div>
+    <div style="font-size:40px;margin-bottom:16px">💬</div>
+    <div style="font-family:'Noto Serif SC',serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:12px">免费体验专属助手</div>
+    <p style="font-size:14px;color:var(--ink-light);line-height:1.7;margin-bottom:28px">添加下方微信，备注「外贸自动助手」<br>即可获得免费体验链接 + 使用教程</p>
+    <div style="background:var(--gold-pale);border:2px solid var(--gold);border-radius:14px;padding:24px">
+      <div style="font-size:13px;color:var(--ink-muted);margin-bottom:8px">微信号</div>
+      <div style="font-family:'Noto Serif SC',serif;font-size:38px;font-weight:700;color:var(--gold);letter-spacing:0.02em">Lehengsw</div>
+    </div>
+    <p style="font-size:12px;color:var(--ink-muted);margin-top:20px">长按或复制微信号，打开微信添加好友</p>
+  </div>
+</div></html>
